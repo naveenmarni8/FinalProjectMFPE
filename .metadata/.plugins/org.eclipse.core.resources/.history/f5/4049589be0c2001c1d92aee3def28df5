@@ -1,0 +1,16 @@
+package com.cognizant.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+import com.cognizant.model.ProviderPolicy;
+
+public interface ProviderPolicyRepo extends JpaRepository<ProviderPolicy,Integer> {
+	//@Query("select (*) from provider_policy",nativeQuery = true)
+	@Query("select c from provider_policy c where c.policyId=100")
+	ProviderPolicy findByPolicyId(int PolicyId);
+	//List<ProviderPolicy> findAllByPolicyIdOrderByLocation(int PolicyId);
+
+}

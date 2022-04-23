@@ -1,0 +1,46 @@
+create table benefits(
+benefitId int primary key,
+benefitName varchar(50)
+);
+
+create table policy
+(
+      policyId int primary key,
+	policyNumber int,
+	benefitId int,
+	premium double,
+	tenure int,
+	capAmountBenefits double,
+      foreign key (benefitId) references benefits(benefitId)
+)
+
+
+insert into member_policy values(200,100,)
+
+create table member_policy
+(
+        memberId int primary key,
+        policyNumber int,
+	policyId int,
+	benefitId int,
+	subscriptionDate Date,
+	tenure int,
+	capAmountBenefits double,
+        foreign key (policyId,policyNumber) references policy(policyId,policyNumber),
+        foreign key (benefitId) references benefits(benefitId)
+);
+
+create table provider_policy
+(
+providerId int primary key,
+providerName varchar(50),
+providerAddress varchar(100),
+policyId int,
+location varchar(50),
+foreign key (policyId) references policy(policyId)
+);
+
+insert into benefits(benefitid,benefitname) values(1,'30 percent discount on dental');
+insert into policy values(100,2999,1,10000,3,35.7);
+insert into member_policy values(200,2999,100,1,'2022-05-21',5,35.7);
+insert into provider_policy values(300,'Sai Naveen','Rajahmundry,India',100,'Hyderabad');

@@ -1,0 +1,22 @@
+package com.cognizant.model;
+
+import java.util.Date;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class MemberPolicy {
+	private int policyNumber;
+	private int memberId;
+	private int policyId;
+	private int benefitId;
+	private Date subscriptionDate;
+	private int tenure;
+	private double capAmountBenefits;
+}
